@@ -104,16 +104,29 @@ ol.color {
   font-size: 4.5em;
   font-weight: 700;
 }
-h1.header-text {
+.header-text{
+  padding-left: 30px;
+  max-width: 400px;
+}
+.seal{
+  padding-right: 30px;
+}
+h1 {
   font-family: 'Open Sans', sans-serif;
-  margin-top: 140px;
   color: white;
   font-size: 73px;
-  font-weight: bold;
 }
-h3.header-text{
-  color: #EC7787;
-  }
+h3{
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 40px;
+}
+h5{
+  font-family: 'Gentium Book Basic', serif;
+  font-weight: 700;
+  color:#fff;
+  font-size:20px;
+}
 
 .btn-default {
     color: #6C472C;
@@ -137,6 +150,12 @@ h3.header-text{
   -ms-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
 }
 /* --------------------------  button  --------------------------------------------- */
 
@@ -348,12 +367,36 @@ a#menu-close:hover {
   height: 100%;
   width: 100%;
   position: relative;
-  background: url(../img/bg.jpg) no-repeat center center fixed; 
+  background: url(../img/bg.jpg) repeat-x center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
+/* Parallax */
+
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+.parallax__layer--back {
+  transform: translateZ(-1px);
+}
+
+
 
 /* Intro */
 
@@ -403,9 +446,45 @@ h4.service-title {
 
 /* Logo & tagline */
 
+.logo-sm{
+  position:absolute;
+  margin: 20px;
+  display:none;
+}
 .logo{
   position:absolute;
   margin: 20px;
+  display:none;
+}
+.logo-lg{
+  position:absolute;
+  margin: 20px;
+}
+
+@media(max-width: 768px){
+  .logo{
+    position:absolute;
+    margin: 20px;
+    display:inline;
+  }
+  .logo-lg{
+    position:absolute;
+    margin: 20px;
+    display:none;
+  }
+}
+
+@media(max-width: 450px){
+  .logo-sm{
+  position:absolute;
+  margin: 20px;
+  display:inline;
+  }
+  .logo{
+    position:absolute;
+    margin: 20px;
+    display:none;
+  }
 }
 
 /* Callout */
