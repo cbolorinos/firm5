@@ -105,11 +105,15 @@ ol.color {
   font-weight: 700;
 }
 .header-text{
-  padding-left: 30px;
-  max-width: 400px;
+  padding: 0 30px;
+  max-width: 450px;
 }
 .seal{
-  padding-right: 30px;
+  padding: 0 10px 0 10px;
+  text-align: right;
+}
+.seal img{
+  max-width: 184px;
 }
 h1 {
   font-family: 'Open Sans', sans-serif;
@@ -119,7 +123,7 @@ h1 {
 h3{
   font-family: 'Open Sans', sans-serif;
   color: white;
-  font-size: 40px;
+  font-size: 32px;
 }
 h5{
   font-family: 'Gentium Book Basic', serif;
@@ -133,8 +137,8 @@ h5{
   }  
 
 .btn-primary {
-  background-color: #228C87;
-  border-color: #228989;
+  background-color: #373f4c;
+  border-color: #373f4c;
 }
 .btn-primary:hover{
   background-color: #6DD1C9;
@@ -426,7 +430,6 @@ a#menu-close:hover {
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
     z-index: 3;
-    margin-top: 40%;
   }
 
   .parallax__layer--deep {
@@ -465,9 +468,21 @@ a#menu-close:hover {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-
-
-
+  .centered-row {
+    position:absolute;
+    margin-top: 40%;
+  }
+  .tagline {
+    text-align: left;
+    position: absolute;
+    left: 20px;
+    bottom: 30%;
+  }
+  .blurry-text {
+    color: transparent;
+    text-shadow: rgba(255, 255, 255, 0.2) 0px 0px 1px;
+    font-size:24px; 
+  }
   /* style the groups
   --------------------------------------------- */
 
@@ -1045,11 +1060,49 @@ i.scroll:hover {
   .map {
   height: 75%;
   }
-
+  h1 {
+    font-size: 60px;
+  }
+  h3{
+    font-size: 28px;
+  }
+  h5{
+    font-size:18px;
+  }
+  .seal{
+    text-align: center;
+    padding:0 10px 0 30px;
+  }
+  .seal img {
+    max-width: 70px;
+  }
+  .header-text{
+    padding:20px auto;
+    text-align: center;
+    margin:0 auto;
+  }
+  .centered-row{
+    margin-top:30%; 
+  }
+}
+@media (max-width: 480px) {
+  .centered-row{
+    margin-top:50%; 
+  } 
 }
 @media only screen and (min-width: 970px){
  .services{
   padding: 140px 0px;
+ }
+ .centered-row {
+    position:absolute;
+    margin-top: 25%;
+ }
+}
+@media only screen and (min-width: 1430px){
+ .centered-row {
+    position:absolute;
+    margin-top: 17%;
  }
 }
 
