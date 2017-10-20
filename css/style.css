@@ -125,13 +125,21 @@ h3{
   color: white;
   font-size: 32px;
 }
+h4{
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 27px;
+}
 h5{
   font-family: 'Gentium Book Basic', serif;
   font-weight: 700;
   color:#fff;
   font-size:20px;
 }
-
+a:hover{
+  color: #4d515f;
+  text-decoration: underline;
+}
 .btn-default {
     color: #6C472C;
   }  
@@ -542,18 +550,7 @@ a#menu-close:hover {
     background: rgb(255,241,100);
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*hamburger menu */
 
 .hidden-menu {
   display: block;
@@ -832,10 +829,6 @@ figure.effect-zoe:hover {
   background: rgb(0, 0, 0);
 }
 
-/*figure.effect-zoe:hover p.description {
-  opacity: 1;
-  background: rgba(46, 155, 146, 0.38);
-}*/
 
 figure.effect-zoe p.description {
   text-align: center;
