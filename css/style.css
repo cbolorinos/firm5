@@ -464,13 +464,13 @@ a#menu-close:hover {
     text-align: center;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 65%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
   .centered-row {
     position:absolute;
-    margin-top: 40%;
+    margin-top: 65%;
   }
   .tagline {
     text-align: left;
@@ -1082,12 +1082,12 @@ i.scroll:hover {
     margin:0 auto;
   }
   .centered-row{
-    margin-top:30%; 
+    margin-top:40%; 
   }
 }
 @media (max-width: 480px) {
   .centered-row{
-    margin-top:50%; 
+    margin-top:60%; 
   } 
 }
 @media only screen and (min-width: 970px){
@@ -1096,13 +1096,13 @@ i.scroll:hover {
  }
  .centered-row {
     position:absolute;
-    margin-top: 25%;
+    margin-top: 35%;
  }
 }
 @media only screen and (min-width: 1430px){
  .centered-row {
     position:absolute;
-    margin-top: 17%;
+    margin-top: 25%;
  }
 }
 
