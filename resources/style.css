@@ -124,9 +124,11 @@ header {
 }
 
 .social {
-    float:left;
-    margin-right:25px;
+    position: absolute;
+    margin-right:100px;
     margin-top:15px;
+    top:0;
+    right:0;
 }
 
 .social ul li {
@@ -541,7 +543,7 @@ nav {
 
 /* --- section-5 --- */
 #slide-5 {
-    background-image:url(../img/bg-5-lt.jpg);
+    background-image:url(../img/bg3.jpg);
 }
 
 .mt3per {
@@ -550,13 +552,17 @@ nav {
 #slide-5 p {
     font-size:14px;
 }
+#slide-5 .row {
+    margin-top:220px;
 
+}
 #slide-5 .bold-white-small {
     margin:5px 0px;
 }
 
 #slide-5 .bold-white {
     line-height:48px;
+    margin-bottom: 30px;
 }
 
 
@@ -1048,6 +1054,9 @@ nav {
     .cont p {
         font-size:16px;
     }
+    .menu{
+        width:35%;
+    }
 }
 
 @media screen and (max-width:840px) {
@@ -1090,7 +1099,9 @@ nav {
         clear:both;
         margin-left:0px !important;
     }
-
+    .menu{
+        width:50%;
+    }
 }
 
 @media screen and (max-width:760px) {
@@ -1118,7 +1129,8 @@ nav {
         min-height: 10px;
     }
     
-    .cubes {
+    .menu{
+        width:100%;
     }
 
     .mobile-cube {
@@ -1197,7 +1209,7 @@ nav {
     }
 
     #slide-2 .row {
-        margin-top: 24px;
+        margin-top: 50px;
     }
 
     #slide-2 p {
@@ -1304,7 +1316,7 @@ nav {
 
     .slide {
         height:auto;
-        min-height: 900px;
+        min-height: 300px;
     }
 
     .bold-white {
