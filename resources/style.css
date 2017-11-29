@@ -1317,16 +1317,16 @@ nav {
     .bold-white {
         font-size: 23px;
         line-height: 24px;
-        margin:10px 35px 10px 0;
         text-align: center;
     }
     .seal {padding: 0px;}
     .bold-blue {
         font-size: 16px;
         line-height: 16px;
-        margin:0px 35px;
+        margin:10px 35px;
         text-align: center;
     }
+
 
     .bold-white-small {
         font-size:16px;
@@ -1338,6 +1338,9 @@ nav {
 
     #slide-2 .bold-white {
         line-height:24px;
+    }
+    #slide-1 .bold-white {
+        margin: 0 35px;
     }
 
     #slide-2 p {
