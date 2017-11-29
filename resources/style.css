@@ -856,7 +856,7 @@ nav {
 }
 
 .form button, .form input[type="submit"]{
-    float:right;
+    float:left;
     width:110px;
     border:1px solid #7b746b;
     background:rgba(0,0,0,0.2);
@@ -1288,16 +1288,9 @@ nav {
         width:250px;
         right:51%;
         margin-right:-123px;
-        padding:10px;
+        padding:50px 10px 10px;
     }
 
-    .advoc-name {
-        font-size:14px;
-    }
-
-    .description p {
-        font-size:12px;
-    }
 
     .orbit-container .orbit-slides-container {
         height:465px !important;
@@ -1448,10 +1441,6 @@ nav {
 
     .mt48 {
         margin-top:6px;
-    }
-
-    .form {
-        display:none;
     }
 
     .right {

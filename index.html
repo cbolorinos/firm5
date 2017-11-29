@@ -324,140 +324,114 @@
 		            <span class="bold-white">CONTACT US</span>
 		            <span class="bold-white-small">CONTACT DETAILS</span>
 		        </div>
-		        
-		    </div>
-	        <div class="small-12 medium-12 large-9 contacts columns">
-	          	<div class="row">
-	               	<div class="small-12 columns">
-	                    <span class="bold-white-small lowercase">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.<br>
-						Ut enim ad minim veniam exercitation.</span>
-	               	</div>
-	               	<div class="small-12 medium-6 large-6 columns upper mt48">
-	                    <span class="bold-white-xsmall"><p>Cascio & Farber<br>
-						A law firm that puts your needs first</p>
-						</span>
-	                    <p>436 NW 7th Street, Seattle WA, 98101<br>
-							<span style="line-height: 1.6em;">Phone +1 206 576 7777</span><br>
-							<span style="line-height: 1.6em;">Fax +1 206 576 3768</span><br>
-							<span style="line-height: 1.6em;">Mobile phone +1 206 576 6765</span><br>
-							<span style="line-height: 1.6em;">E-mail: </span><a href="" style="font-size: 13px; line-height: 20.7999992370605px;">info@casciofarber.com</a>
-						</p>
-						<p><span style="line-height: 1.6em;">Law Group partners:</span></p>
-						<p><span style="line-height: 1.6em;">Lawyer lorem ipsum dolor sit</span><br>
-						<span style="line-height: 1.6em;">Lawyer lorem ut aliquip</span><br>
-						<span style="line-height: 1.6em;">Lawyer aute irure sit </span><br>
-						<span style="line-height: 1.6em;">Lawyer nisi ut aliquip ex ea</span></p>
-						<p><span style="line-height: 1.6em;">Sed ut perspiciatis unde omnis iste natus</span><br>
-						<span style="line-height: 1.6em;">Quis autem vel eum iure reprehenderit</span></p>
-	                </div>
-	                <div class="small-12 medium-6 large-6 columns upper mt48">
-	                    <span class="bold-white-xsmall"><p>Cascio & Farber<br> A law firm that puts you first</p>
-							<p>&nbsp;</p>
-						</span>
-	                    <p>Branch<br>
+		        <div class="small-12 columns">
+		        	<span class="bold-white-small lowercase">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.<br>
+					Ut enim ad minim veniam exercitation.</span>
+		        </div>
+		        <div class="small-12 medium-12 large-4 columns form">
+		            <div class="form-fields">
+		                <form action="http://www.ogmilaw.lt/ajaxforms/submit/form_ask_home" id="form_ask_home" method="post" accept-charset="utf-8">
+							<div>
+		    					<label>First name
+							        <input type="text" id="form_ask_home_first_name" name="first_name">
+							    </label>
+							    <label>
+							        Email
+							        <input type="text" id="form_ask_home_email" name="email">
+							    </label>
+							    <label>
+							        Phone
+							        <input type="text" id="form_ask_home_phone" name="phone">
+							    </label>
+							</div>
+							<div>
+							    <label>
+							        Message text
+							        <textarea type="text" id="form_ask_home_message" name="message"></textarea>
+							    </label>
+							    <button class="g-recaptcha">Send</button>
+							</div>
+							<script src="./resources/api.js.download" async="" defer=""></script>
+
+							<style type="text/css">
+							.grecaptcha-badge {
+							    display: none;
+							}
+							</style> 
+							<script type="text/javascript">
+							   function onSubmit(token) {
+									//jQuery('#form_ask_home').submit(function() {
+
+										var me = jQuery('#form_ask_home');
+										var form_data = jQuery(me).serialize();
+										var btn_submit = jQuery('button', jQuery(me));
+
+										// disable submit button
+										btn_submit.prop('disabled', true);
+										btn_submit.prop('html', 'Sending');
+
+							            $.ajax({ url: me.attr('action'), dataType: 'json', type: 'post', data: form_data}).success(function(return_data)
+							            {
+							                if (return_data.success)
+							                {
+							                    $('#form_ask_home').slideUp().html('<p class="flash">'+return_data.message+'</p>').addClass('success').slideDown();
+							                    // $('#form_ask_home').html('<p class="flash">'+return_data.message+'</p>');
+							                }
+							                else
+							                {
+							                    //var errors = jQuery.parseJSON(return_data.errors);
+							                    var errors = return_data.errors;
+
+							                    var key_new = null;
+							                    $.each(errors, function(key, value) {
+							                        key_new = 'form_ask_home_'+key;
+
+							                        if (value == false)
+							                        {
+							                            // $('#'+key_new).parent().addClass('error');
+							                            $('#'+key_new).addClass('error');
+							//								$("input[name="+key+"]").parent().addClass('error');
+							                        }
+							                        else
+							                        {
+							                            // $('#'+key_new).parent().removeClass('error');
+							                            $('#'+key_new).removeClass('error');
+							//								$("input[name="+key+"]").parent().removeClass('error');
+							                        }
+							                    });
+
+							                    grecaptcha.reset();
+
+							                    // errors on form, we need submit button
+							                    btn_submit.prop('html', 'Send');
+							                    btn_submit.prop('disabled', false);
+							                }
+							            });
+
+										return false;
+							    }
+							</script>
+						</form>
+					</div>
+		        </div>
+		        <div class="small-12 medium-12 large-4 columns">
+		        	<span class="bold-white-xsmall"><p>Cascio & Farber<br>
+					A law firm that puts your needs first</p>
+					</span>
+	                <p>
+	                	<span style="line-height: 1.6em;">Phone +1 206 576 7777</span><br>
+						<span style="line-height: 1.6em;">Mobile phone +1 206 576 6765</span><br>
+						<span style="line-height: 1.6em;">E-mail: </span><a href="" style="font-size: 13px; line-height: 20.7999992370605px;">info@casciofarber.com</a>
+					</p>
+		        </div>
+		        <div class="small-12 medium-12 large-4 columns">
+		        	<p>Branch<br>
 							436 NW 7th Street, Seattle WA, 98101<br>
 							Phone&nbsp; +1 206 576 7777<br>
-							Fax +1 206 576 3768<br>
 							Mobile phone +1 206 576 6765<br>
-							E-mail: <a href="mailto:giedrius.guzauskas@ogmilaw.lt">info@casciofarber.com</a>
-						</p>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="small-12 medium-12 large-3 columns form">
-	            <div class="form-fields">
-	                <form action="http://www.ogmilaw.lt/ajaxforms/submit/form_ask_home" id="form_ask_home" method="post" accept-charset="utf-8">
-						<div class="small-12 medium-4 large-12 columns">
-	    					<label>First name
-						        <input type="text" id="form_ask_home_first_name" name="first_name">
-						    </label>
-						    <label>
-						        Email
-						        <input type="text" id="form_ask_home_email" name="email">
-						    </label>
-						    <label>
-						        Phone
-						        <input type="text" id="form_ask_home_phone" name="phone">
-						    </label>
-						</div>
-						<div class="small-12 medium-8 large-12 nopadright columns">
-						    <label>
-						        Message text
-						        <textarea type="text" id="form_ask_home_message" name="message"></textarea>
-						    </label>
-						    <div class="validate">
-						        <div class="cacha">
-						            <input type="hidden" name="recaptcha" value="1">
-						            <div><div class="grecaptcha-badge" style="width: 256px; height: 60px; box-shadow: gray 0px 0px 5px;"><div class="grecaptcha-logo"><iframe src="./resources/anchor.html" title="recaptcha widget" width="256" height="60" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div><button class="g-recaptcha" data-sitekey="6LeZMysUAAAAAMbLkA1K2c8zkhXHTqEcSgra2TQr" data-badge="inline" data-callback="onSubmit">Send</button>
-						        </div>
-						    </div>
-						</div>
-						<script src="./resources/api.js.download" async="" defer=""></script>
-
-						<style type="text/css">
-						.grecaptcha-badge {
-						    display: none;
-						}
-						</style> 
-						<script type="text/javascript">
-						   function onSubmit(token) {
-								//jQuery('#form_ask_home').submit(function() {
-
-									var me = jQuery('#form_ask_home');
-									var form_data = jQuery(me).serialize();
-									var btn_submit = jQuery('button', jQuery(me));
-
-									// disable submit button
-									btn_submit.prop('disabled', true);
-									btn_submit.prop('html', 'Sending');
-
-						            $.ajax({ url: me.attr('action'), dataType: 'json', type: 'post', data: form_data}).success(function(return_data)
-						            {
-						                if (return_data.success)
-						                {
-						                    $('#form_ask_home').slideUp().html('<p class="flash">'+return_data.message+'</p>').addClass('success').slideDown();
-						                    // $('#form_ask_home').html('<p class="flash">'+return_data.message+'</p>');
-						                }
-						                else
-						                {
-						                    //var errors = jQuery.parseJSON(return_data.errors);
-						                    var errors = return_data.errors;
-
-						                    var key_new = null;
-						                    $.each(errors, function(key, value) {
-						                        key_new = 'form_ask_home_'+key;
-
-						                        if (value == false)
-						                        {
-						                            // $('#'+key_new).parent().addClass('error');
-						                            $('#'+key_new).addClass('error');
-						//								$("input[name="+key+"]").parent().addClass('error');
-						                        }
-						                        else
-						                        {
-						                            // $('#'+key_new).parent().removeClass('error');
-						                            $('#'+key_new).removeClass('error');
-						//								$("input[name="+key+"]").parent().removeClass('error');
-						                        }
-						                    });
-
-						                    grecaptcha.reset();
-
-						                    // errors on form, we need submit button
-						                    btn_submit.prop('html', 'Send');
-						                    btn_submit.prop('disabled', false);
-						                }
-						            });
-
-									return false;
-						    }
-						</script>
-					</form>
-				</div>
-	        </div>
-	        <div class="small-12 columns call">
-	            <button id="call">Call</button>
-	        </div>
+							E-mail: <a href="mailto:#">seattle@casciofarber.com</a>
+					</p>
+		        </div>        
 		    </div>
 		    <div class="row bottom">
 		        <div class="small-12 medium-6 large-6 columns copyrights">
